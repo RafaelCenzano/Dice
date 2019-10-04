@@ -1,4 +1,4 @@
-int[] gridX = {9, 15, 21};
+int[] gridX = {18, 30, 42};
 int[] gridY = gridX;
 
 Die bob = new Die(20, 20);
@@ -6,7 +6,7 @@ Die bob = new Die(20, 20);
 void setup(){
 	noLoop();
 	size(300, 300);
-	
+	noStroke();
 }
 
 void draw(){
@@ -24,7 +24,11 @@ class Die{ //models one single dice cube
 
 	//variable declarations here
 	int dieX, dieY, num;
-	int[][] dots = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
+	int[][] dots = {
+					{0, 0, 0},
+					{0, 0, 0},
+					{0, 0, 0}
+				   };
 	
 	//constructor
 	Die(int x, int y){
@@ -56,14 +60,15 @@ class Die{ //models one single dice cube
 	void show(){
 		//your code here
 		fill(0, 255, 0);
-		rect(dieX, dieY, 30, 30);
+		rect(dieX, dieY, 60, 60);
 		//divide cube into 5 parts each 2 pixels wide
 		for(int i = 0; i < 3; i++){
 			for(int j = 0; j < 3; j++){
 				if(dots[i][j] != 0){
 					int dotY = gridY[i];
 					int dotX = gridX[j];
-					ellipse(dotX + dieX, dotY + dieY, 3, 3);
+					fill(255, 255, 255);
+					ellipse(dotX + dieX, dotY + dieY, 8, 8);
 				}
 			}
 		}
