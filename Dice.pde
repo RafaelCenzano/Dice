@@ -1,11 +1,14 @@
 int[] gridX = {18, 30, 42};
 int[] gridY = gridX;
+int[] dice = new int[9];
 
-Die bob = new Die(20, 20);
+for(int i = 0; i < 3; i++){
+	Die dice[i] = new Die(20 + (i * 30) , 20);
+}
 
 void setup(){
 	noLoop();
-	size(300, 300);
+	size(600, 600);
 	noStroke();
 }
 
@@ -23,7 +26,7 @@ void mousePressed(){
 class Die{ //models one single dice cube
 
 	//variable declarations here
-	int dieX, dieY, num;
+	int dieX, dieY, num, status;
 	int[][] dots = {
 					{0, 0, 0},
 					{0, 0, 0},
@@ -82,28 +85,37 @@ class Die{ //models one single dice cube
 	}
 	void one(){
 		dots[1][1] = 1;
+		status = 1;
 	}
 	void two(){
 		dots[0][0] = 1;
 		dots[2][2] = 1;
+		status = 2;
 	}
 	void three(){
 		two();
 		one();
+		status = 3;
 	}
 	void four(){
 		two();
 		dots[0][2] = 1;
 		dots[2][0] = 1;
+		status = 4;
 	}
 	void five(){
 		three();
 		dots[0][2] = 1;
 		dots[2][0] = 1;
+		status = 5;
 	}
 	void six(){
 		four();
 		dots[1][0] = 1;
 		dots[1][2] = 1;
+		status = 6;
+	}
+	void getStatus(){
+		return status;
 	}
 }
