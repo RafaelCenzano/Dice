@@ -4,7 +4,7 @@ int[] gridY = gridX;
 
 void setup(){
 	noLoop();
-	size(660, 720);
+	size(660, 780);
 	noStroke();
 }
 
@@ -20,6 +20,9 @@ void draw(){
     		sum += randDieRoller.getStatus();
   		}
   	}
+  	fill(0, 200, 0);
+  	textSize(32);
+	text("Total: " + sum, 270, 760); 
 }
 
 void mousePressed(){
@@ -42,7 +45,7 @@ class Die{ //models one single dice cube
 		//variable initializations here
 		dieX = x;
 		dieY = y;
-		c = color(0, 200 - (y / 7), 0);
+		c = color(0, 220 - (y / 7) - (x / 7), 0);
 	}
 	void roll(){
 		//your code here
