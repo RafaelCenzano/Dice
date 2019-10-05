@@ -1,22 +1,25 @@
 int[] gridX = {18, 30, 42};
 int[] gridY = gridX;
-int[] dice = new int[9];
 
-for(int i = 0; i < 3; i++){
-	Die dice[i] = new Die(20 + (i * 30) , 20);
-}
 
 void setup(){
 	noLoop();
-	size(600, 600);
+	size(660, 720);
 	noStroke();
 }
 
 void draw(){
 	//your code here
 	background(0);
-	bob.roll();
-	bob.show();
+	int sum = 0;
+	for (int y = 0; y < 720; y = y + 60){
+		for (int x = 0; x < 650; x = x + 60){
+    		Die randDieRoller = new Die(x, y);
+    		randDieRoller.roll();
+    		randDieRoller.show();
+    		sum += randDieRoller.getStatus();
+  		}
+  	}
 }
 
 void mousePressed(){
@@ -27,6 +30,7 @@ class Die{ //models one single dice cube
 
 	//variable declarations here
 	int dieX, dieY, num, status;
+	color c;
 	int[][] dots = {
 					{0, 0, 0},
 					{0, 0, 0},
@@ -38,6 +42,7 @@ class Die{ //models one single dice cube
 		//variable initializations here
 		dieX = x;
 		dieY = y;
+		c = color(0, 200 - (y / 7), 0);
 	}
 	void roll(){
 		//your code here
@@ -59,10 +64,11 @@ class Die{ //models one single dice cube
 			System.out.println("Error occured");
 			System.exit(0);
 		}
+		status = num;
 	}
 	void show(){
 		//your code here
-		fill(0, 255, 0);
+		fill(c);
 		rect(dieX, dieY, 60, 60);
 		//divide cube into 5 parts each 2 pixels wide
 		for(int i = 0; i < 3; i++){
@@ -85,37 +91,31 @@ class Die{ //models one single dice cube
 	}
 	void one(){
 		dots[1][1] = 1;
-		status = 1;
 	}
 	void two(){
 		dots[0][0] = 1;
 		dots[2][2] = 1;
-		status = 2;
 	}
 	void three(){
 		two();
 		one();
-		status = 3;
 	}
 	void four(){
 		two();
 		dots[0][2] = 1;
 		dots[2][0] = 1;
-		status = 4;
 	}
 	void five(){
 		three();
 		dots[0][2] = 1;
 		dots[2][0] = 1;
-		status = 5;
 	}
 	void six(){
 		four();
 		dots[1][0] = 1;
 		dots[1][2] = 1;
-		status = 6;
 	}
-	void getStatus(){
+	int getStatus(){
 		return status;
 	}
 }
