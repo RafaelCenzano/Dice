@@ -1,10 +1,11 @@
 int[] gridX = {18, 30, 42};
 int[] gridY = gridX;
+int superSum = 0;
 
 
 void setup(){
 	noLoop();
-	size(660, 780);
+	size(660, 810);
 	noStroke();
 }
 
@@ -20,9 +21,11 @@ void draw(){
     		sum += randDieRoller.getStatus();
   		}
   	}
+  	superSum += sum;
   	fill(0, 200, 0);
   	textSize(32);
-	text("Total: " + sum, 270, 760); 
+	text("Total for this roll: " + sum, 10, 760);
+	text("Grandtotal: " + superSum, 10, 760 + 40);
 }
 
 void mousePressed(){
@@ -45,7 +48,7 @@ class Die{ //models one single dice cube
 		//variable initializations here
 		dieX = x;
 		dieY = y;
-		c = color(0, 220 - (y / 7) - (x / 7), 0);
+		c = color(0, 70 + (x / 7) + (y / 7), 0);
 	}
 	void roll(){
 		//your code here
