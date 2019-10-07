@@ -1,26 +1,27 @@
 int[] gridX = {18, 30, 42};
 int[] gridY = gridX;
 int superSum = 0;
+Die[] diceObjects = new Die[200];
+int count = 0;
 
 
 void setup(){
 	noLoop();
 	size(660, 810);
 	noStroke();
+	for(int y = 0; y < 720; y = y + 60){
+		for (int x = 0; x < 650; x = x + 60){
+   			diceObjects[count] = new Die(x, y);
+   			count++;
+    	}
+	}
 }
 
 void draw(){
 	//your code here
 	background(0);
 	int sum = 0;
-	for (int y = 0; y < 720; y = y + 60){
-		for (int x = 0; x < 650; x = x + 60){
-    		Die randDieRoller = new Die(x, y);
-    		randDieRoller.roll();
-    		randDieRoller.show();
-    		sum += randDieRoller.getStatus();
-  		}
-  	}
+	
   	superSum += sum;
   	fill(0, 200, 0);
   	textSize(32);
