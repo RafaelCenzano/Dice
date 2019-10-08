@@ -1,7 +1,7 @@
 int[] gridX = {18, 30, 42};
 int[] gridY = gridX;
 int superSum = 0;
-Die[] diceObjects = new Die[200];
+Die[] diceObjects = new Die[132];
 int count = 0;
 
 
@@ -21,10 +21,17 @@ void draw(){
 	//your code here
 	background(0);
 	int sum = 0;
-	
+  	
+  	for(int i = 0; i < diceObjects.length; i++){
+  		diceObjects[i].reset();
+  		diceObjects[i].roll();
+  		diceObjects[i].show();
+  		sum += diceObjects[i].num;
+  	}
+
   	superSum += sum;
-  	fill(0, 200, 0);
   	textSize(32);
+  	fill(0, 200, 0);
 	text("Total for this roll: " + sum, 10, 760);
 	text("Grandtotal: " + superSum, 10, 760 + 40);
 }
@@ -36,7 +43,7 @@ void mousePressed(){
 class Die{ //models one single dice cube
 
 	//variable declarations here
-	int dieX, dieY, num, status;
+	int dieX, dieY, num;
 	color c;
 	int[][] dots = {
 					{0, 0, 0},
@@ -49,11 +56,10 @@ class Die{ //models one single dice cube
 		//variable initializations here
 		dieX = x;
 		dieY = y;
-		c = color(0, 70 + (x / 7) + (y / 7), 0);
+		c = color(0, 40 + (x / 7) + (y / 7), 0);
 	}
 	void roll(){
 		//your code here
-		reset();
 		num = (int)(Math.random() * 6) + 1;
 		if(num == 1){
 			one();
@@ -71,7 +77,6 @@ class Die{ //models one single dice cube
 			System.out.println("Error occured");
 			System.exit(0);
 		}
-		status = num;
 	}
 	void show(){
 		//your code here
@@ -121,8 +126,5 @@ class Die{ //models one single dice cube
 		four();
 		dots[1][0] = 1;
 		dots[1][2] = 1;
-	}
-	int getStatus(){
-		return status;
 	}
 }
