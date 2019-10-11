@@ -1,31 +1,38 @@
 void setup()
-{
-	background (255, 255, 255);
-	noLoop();
+{ 
+  size(700, 700);
+  noLoop();
 }
 void draw()
 {
-	//your code here
+  
 }
 void mousePressed()
 {
-	redraw();
+  redraw();
 }
 class Die //models one single dice cube
 {
-	//variable declarations here
-	
-	Die(int x, int y) //constructor
-	{
-		int x = (int)(Math.Random() * 700);
-		int y = (int)(Math.Random() * 700);//variable initializations here
-	}
-	void roll()
-	{
-		//your code here
-	}
-	void show()
-	{
-		//your code here
-	}
+  //variable declarations here
+  int myX, myY;
+  Die(int x, int y) //constructor
+  {
+    //variable initializations here
+    myX = x;
+    myY = y;
+  }
+
+  void roll()
+  {
+    //your code here
+  }
+  void show()
+  {
+    for (int j = 0; j < 700; j += 30){
+      for (int i = 0; i < 700; i += 10){
+        rect(myX, myY, 50, 50);
+       }
+     
+    }
+  }
 }
