@@ -1,5 +1,6 @@
 void setup()
 {
+	background (255, 255, 255);
 	noLoop();
 }
 void draw()
@@ -16,7 +17,8 @@ class Die //models one single dice cube
 	
 	Die(int x, int y) //constructor
 	{
-		//variable initializations here
+		int x = (int)(Math.Random() * 700);
+		int y = (int)(Math.Random() * 700);//variable initializations here
 	}
 	void roll()
 	{
