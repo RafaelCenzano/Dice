@@ -1,7 +1,8 @@
 void setup()
 { 
-  size(700, 700);
+  size(700, 900);
   noLoop();
+  background(255, 255, 255);
 }
 void draw()
 {
@@ -40,6 +41,10 @@ class Die //models one single dice cube
   }
   void show()
   {
+    int a = (int)(Math.random()* 255) + 90;
+    int b = (int)(Math.random()* 255) + 90;
+    int c = (int)(Math.random()* 255) + 90;
+    fill (a, b, c);
     rect(myX, myY, 50, 50);
    
   }
