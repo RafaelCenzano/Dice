@@ -68,7 +68,7 @@ class Die //models one single dice cube
     cirlce[0][0] = 1;
     circle[2][2] = 1;
   }
-  void three(){
+  void tres(){
     uno();
     dos();
   }
