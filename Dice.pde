@@ -1,13 +1,15 @@
+int[] gridX = {18, 30, 42};
+int[] gridY = gridX;
 void setup()
 { 
-  size(700, 900);
+  size(720, 900);
   noLoop();
   background(255, 255, 255);
 }
 void draw()
 {
-  for (int y = 0; y < 700; y += 50){
-     for (int x = 0; x < 700; x += 50){
+  for (int y = 0; y < 700; y += 60){
+     for (int x = 0; x < 700; x += 60){
         Die var = new Die(x, y);
         var.roll();
         var.show();
@@ -58,11 +60,14 @@ class Die //models one single dice cube
     int b = (int)(Math.random()* 255) + 90;
     int c = (int)(Math.random()* 255) + 90;
     fill (a, b, c);
-    rect(myX, myY, 50, 50); 
-    for(int a = 0; a < 3; a++){
-      for(int b = 0; b < 3; b++){
-        if(circle[a][b] != 0){
-          
+    rect(myX, myY, 60, 60); 
+    for(int m = 0; m < 3; m++){
+      for(int n = 0; n < 3; n++){
+        if(circle[m][n] != 0){
+          int dotY = gridY[m];
+          int dotX = gridX[n];
+          fill(255, 255, 255);
+          ellipse(dotX + myX, dotY + myY, 8, 8);
         }
       }
     }
@@ -72,7 +77,7 @@ class Die //models one single dice cube
     circle[1][1] = 1;
   }
   void dos(){
-    cirlce[0][0] = 1;
+    circle[0][0] = 1;
     circle[2][2] = 1;
   }
   void tres(){
