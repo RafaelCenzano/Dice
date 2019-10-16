@@ -66,7 +66,10 @@ class Die //models one single dice cube
         if(circle[m][n] != 0){
           int dotY = gridY[m];
           int dotX = gridX[n];
-          fill(255, 255, 255);
+          int e = (int)(Math.random()* 255) + 90;
+          int r = (int)(Math.random()* 255) + 90;
+          int t = (int)(Math.random()* 255) + 90;
+          fill(e, r, t);
           ellipse(dotX + myX, dotY + myY, 8, 8);
         }
       }
