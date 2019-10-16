@@ -48,8 +48,8 @@ class Die //models one single dice cube
       cuatro();
     }else if(numero == 5){
       cinco();
-    }else(numero == 6){
-      seis(); 
+    }else{
+      seis();
     } 
   }
   void show()
@@ -59,6 +59,13 @@ class Die //models one single dice cube
     int c = (int)(Math.random()* 255) + 90;
     fill (a, b, c);
     rect(myX, myY, 50, 50); 
+    for(int a = 0; a < 3; a++){
+      for(int b = 0; b < 3; b++){
+        if(circle[a][b] != 0){
+          
+        }
+      }
+    }
     
   }
   void uno(){
