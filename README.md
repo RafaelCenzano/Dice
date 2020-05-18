@@ -1,7 +1,7 @@
 Dice
 ====
 
-In this assignment we'll practice using OOP (Object Oriented Programming) techniques. We'll create a `class` to model what a single die has and does, and then we will create at least 9 *instances* of that class arranged in a grid shape. Note that for full credit your program must display the total of all the dice and draw the dice with dots or similar marks. Also, you must customize the title, header and footer of `index.html`. You may find the first 66 slides of the [OOP--Classes](https://docs.google.com/presentation/d/13Ozn2xajO_juZfbm7I6gn0zM9p0leSTGDMBwUl2kPAQ/edit?usp=sharing) slide presentation helpful, as well as the [Nested Loops](https://docs.google.com/document/d/1kzbAIebvhj0euZFYFa1WSLWWy_2cWwrq_sL0Ae4CaAw/edit?usp=sharing), [Practice with classes](https://docs.google.com/document/d/1kzbAIebvhj0euZFYFa1WSLWWy_2cWwrq_sL0Ae4CaAw/edit?usp=sharing) and the [Math.random](https://drive.google.com/file/d/0Bz2ZkT6qWPYTSU84X3FSOGYwdFU/view?usp=sharing) worksheets.
+In this assignment we'll practice using OOP (Object Oriented Programming) techniques. We'll create a `class` to model what a single die has and does, and then we will create at least 9 *instances* of that class arranged in a grid shape. Note that for full credit your program must display the total of all the dice and draw the dice with dots or similar marks. Also, you must customize the title, header and footer of `index.html`. You may find the first 66 slides of the [OOP--Classes](https://docs.google.com/presentation/d/13Ozn2xajO_juZfbm7I6gn0zM9p0leSTGDMBwUl2kPAQ/edit?usp=sharing) slide presentation helpful, as well as the [Nested Loops](https://docs.google.com/document/d/1kzbAIebvhj0euZFYFa1WSLWWy_2cWwrq_sL0Ae4CaAw/edit?usp=sharing), and the [Math.random](https://drive.google.com/file/d/0Bz2ZkT6qWPYTSU84X3FSOGYwdFU/view?usp=sharing) worksheets.
 
 Suggested steps to start the assignment
 ------------------------------------------   
@@ -22,7 +22,7 @@ Suggested steps to start the assignment
 	}
 	class Die //models one single dice cube
 	{
-	    //variable declarations here
+	    //member variable declarations here
 	    
 	    Die(int x, int y) //constructor
 	    {
@@ -38,16 +38,17 @@ Suggested steps to start the assignment
 	    }
 	}
 ```
-
-2. Complete the `draw()` function first. For now it should:  
+2. Write the member variable declarations for the `Die` class
+2. Then, write code in the constructor to initialize the member variables
+2. Next, complete the `draw()` function. For now it should:  
      - clear the screen
      - declare and initialize one instance of the `Die` class
      - Call the `show()` function for that `Die` (even though we won't see anything yet)
-3. Now lets work on the `Die` class. 
-     - First complete the `show()` function that displays the die to the screen. Notice that the constructor takes arguments. We'll use those arguments to position the individual die cubes. Don't worry about the dots at first, just get the shape of the dice on the screen for now. 
+3. Now lets work on the `show()` function. 
+     - Notice that the constructor takes arguments. We'll use those arguments to position the individual die cubes. Don't worry about the dots at first, just get the shape of the dice on the screen for now. 
      - Once you like the shape of your die, go back to `show()` and add some `if` statements to check how many dots you need to put on the die. Start by "forcing" the die to always roll a one. Check to see that you can get one dot where it is suppose to be, and move on to two, and so on. If you are clever, you can combine some of the ifs and avoid duplicate code. 
 4. Now, use nested loops to display at least nine instances of the `Die` class. This is the power of OOP. It's not that much more work to make 1000 dice as it is to make one. Make sure the dots are on the dice. Your `show()` function will need to position the dots by adding some small amount to the x and y coordinates of the `rect()` of the `Die`
-5. Finally, add code to the `draw()` function so that your program displays the total for the roll to the screen.  
+5. Finally, add code to the `draw()` function so that your program displays the total for the roll to the screen. You may find the `Coin` and `Token` programs on the slide presentation helpful. 
 
 Program requirements
 -----------------------
@@ -67,6 +68,42 @@ For a challenge, you might see how many legible dice you can fit on the screen. 
 
 Samples of Student Work
 -----------------------
+[Marjkelly](https://mavaleria.github.io/Dice/)   
+[Luna](https://random-coders.github.io/Dice/)    
+[Teodora](https://tesutilovic.github.io/Dice/)   
+[Kazu](https://chshimotake.github.io/Dice/)   
+[Vassili](https://vassilimc.github.io/Dice/)   
+[Kang](https://kangryu.github.io/Dice/)   
+[Jason](https://jjjscodes.github.io/Dice/)   
+[Melanie](https://metam2.github.io/Dice/)   
+[Rafael](https://rafaelcenzano.github.io/Dice/)   
+[Kang](https://kangryu.github.io/Dice/)   
+[Ian](https://ianjazz246.github.io/Dice/)   
+[Allister](https://allistertxu.github.io/Dice/)   
+[Claire](https://cmbeaudin.github.io/Dice/)   
+[Kai](https://kajjchang.github.io/Dice/)   
+[Shannon](https://shaachaa0110.github.io/Dice/)   
+[Jasmine](https://jasmine-c-16.github.io/Dice/)   
+[Tomas](https://todeluco.github.io/Dice/)   
+[Matt](https://madyer1.github.io/Dice/)   
+[Marlon](https://marlonsm.github.io/Dice/)   
+[Sam](https://samuel-kap.github.io/Dice/)   
+[Xinjian](https://xinjiannn.github.io/Dice/)   
+[Yanzhu](https://xinjiannn.github.io/Dice/)   
+[Jasper](https://jasper21223.github.io/Dice/)   
+[Lucas](https://lucaschin.github.io/Dice/)   
+[Maanav](https://gandhigang.github.io/Dice/)   
+[Andrew](https://a431.github.io/Dice/)   
+[Tommy](https://imatomster.github.io/Dice/)   
+[Marvin](https://malee31.github.io/DiceProcessing/)   
+[Dylan](https://sinfinite01.github.io/Dice/)   
+[Phuoc](https://megagotnothing.github.io/Dice/)   
+[Claire](https://clrafferty.github.io/Dice/)   
+[PJ](https://pjol.github.io/Dice/)   
+[Anna](https://annaorgel.github.io/Dice/)   
+[Kimia](https://kimiasattary.github.io/Dice/)   
+[Robert](https://frestho.github.io/Dice/)   
+[Fiona](https://frestho.github.io/Dice/)   
 [Joshua](https://jowong1.github.io/Dice/)   
 [Fred](https://fredxhua.github.io/Dice/)   
 [Richard](https://riprivalov.github.io/Dice/)   
